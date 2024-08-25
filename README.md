@@ -1,6 +1,6 @@
 <!--START_SECTION:lapras-card-->
-<p ><a href="https://lapras.com/public/0YVHVUN" target="_blank" rel="noopener noreferrer"><img alt="0YVHVUNのLAPRASでのスコアは次の通りです: エンジニアリング: 3.78 / 5.0, ビジネス: 3.48 / 5.0, インフルエンス: 3.3 / 5.0." src="https://lapras-card-generator.vercel.app/api/svg?e=3.78&b=3.48&i=3.3&b1=%23020E27&b2=%230E5593&i1=%23030E21&i2=%231688BF&l=ja" width="400" ></a>  
-Last Updated on 8/24/2024, 1:19:50 AM</p>
+<p ><a href="https://lapras.com/public/0YVHVUN" target="_blank" rel="noopener noreferrer"><img alt="0YVHVUNのLAPRASでのスコアは次の通りです: エンジニアリング: 3.79 / 5.0, ビジネス: 3.48 / 5.0, インフルエンス: 3.32 / 5.0." src="https://lapras-card-generator.vercel.app/api/svg?e=3.79&b=3.48&i=3.32&b1=%23020E27&b2=%230E5593&i1=%23030E21&i2=%231688BF&l=ja" width="400" ></a>  
+Last Updated on 8/25/2024, 1:34:10 AM</p>
 <!--END_SECTION:lapras-card-->
 
 <!--
