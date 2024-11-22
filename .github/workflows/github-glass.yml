@@ -1,0 +1,35 @@
+name: Check GitHub Contributions and Notify
+
+on:
+  schedule:
+    - cron: "0 12 * * *" # UTC時間で毎日12時（日本時間で21時）に実行
+
+jobs:
+  check-and-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for Contributions on Main and Master Branches
+        id: check_contributions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DATE=$(date -u +"%Y-%m-%dT00:00:00Z")
+          USERNAME="${{ github.repository_owner }}"
+          QUERY="{\"query\": \"query { user(login: \\\"$USERNAME\\\") { contributionsCollection(from: \\\"$DATE\\\", to: \\\"$DATE\\\") { commitContributionsByRepository { repository { name, defaultBranchRef { name } } contributions(first: 100) { totalCount } } } } }\"}"
+
+          RESPONSE=$(curl -H "Authorization: bearer $GITHUB_TOKEN" -H "Content-Type: application/json" -d "$QUERY" https://api.github.com/graphql)
+          echo "Response: $RESPONSE"
+          MAIN_COUNT=$(echo $RESPONSE | jq '[.data.user.contributionsCollection.commitContributionsByRepository[] | select(.repository.defaultBranchRef.name == "main") | .contributions.totalCount] | add // 0')
+          MASTER_COUNT=$(echo $RESPONSE | jq '[.data.user.contributionsCollection.commitContributionsByRepository[] | select(.repository.defaultBranchRef.name == "master") | .contributions.totalCount] | add // 0')
+          TOTAL_COUNT=$(($MAIN_COUNT + $MASTER_COUNT))
+
+          echo "Total contributions to main and master: $TOTAL_COUNT"
+          echo "CONTRIBUTIONS_COUNT=$TOTAL_COUNT" >> $GITHUB_ENV
+
+      - name: Send LINE Notification if No Contributions
+        if: env.CONTRIBUTIONS_COUNT == '0'
+        env:
+          LINE_TOKEN: ${{ secrets.LINE_TOKEN }}
+          MESSAGE: "まもなく今日が終わりますがまだGitHubの草が生えてません！今すぐ草を生やしましょう！"
+        run: |
+          curl -X POST -H "Authorization: Bearer $LINE_TOKEN" -F "message=$MESSAGE" https://notify-api.line.me/api/notify
