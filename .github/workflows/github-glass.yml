@@ -2,7 +2,7 @@ name: Check GitHub Contributions and Notify
 
 on:
   schedule:
-    - cron: "0 12 * * *" # UTC時間で毎日12時（日本時間で21時）に実行
+    - cron: "0 13 * * *" # UTC時間で毎日13時（日本時間で22時）に実行
 
 jobs:
   check-and-notify:
