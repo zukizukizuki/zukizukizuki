@@ -109,8 +109,8 @@
 <div align="center">
   
   <!--START_SECTION:lapras-card-->
-<p ><a href="https://lapras.com/public/0YVHVUN" target="_blank" rel="noopener noreferrer"><img alt="0YVHVUNのLAPRASでのスコアは次の通りです: エンジニアリング: 3.96 / 5.0, ビジネス: 3.48 / 5.0, インフルエンス: 3.83 / 5.0." src="https://lapras-card-generator.vercel.app/api/svg?e=3.96&b=3.48&i=3.83&b1=%23020E27&b2=%230E5593&i1=%23030E21&i2=%231688BF&l=ja" width="400" ></a>  
-Last Updated on 6/17/2025, 1:56:42 AM</p>
+<p ><a href="https://lapras.com/public/0YVHVUN" target="_blank" rel="noopener noreferrer"><img alt="0YVHVUNのLAPRASでのスコアは次の通りです: エンジニアリング: 3.97 / 5.0, ビジネス: 3.48 / 5.0, インフルエンス: 3.83 / 5.0." src="https://lapras-card-generator.vercel.app/api/svg?e=3.97&b=3.48&i=3.83&b1=%23020E27&b2=%230E5593&i1=%23030E21&i2=%231688BF&l=ja" width="400" ></a>  
+Last Updated on 6/18/2025, 1:55:59 AM</p>
 <!--END_SECTION:lapras-card-->
   
   <img src="https://komarev.com/ghpvc/?username=zukizukizuki&style=flat-square&color=blue" alt="Profile views"/>
